@@ -9,7 +9,30 @@ import SwiftUI
 
 struct BackgroundsandOverlaysBootcamp: View {
     var body: some View {
-        VStack(spacing:50){
+        VStack(spacing:80){
+            
+            Image(systemName: "heart.fill").foregroundColor(.white)
+                .font(.system(size:40))
+                .background(
+                    Circle()
+                        .fill(
+                            LinearGradient(gradient: Gradient(colors: [.blue,.purple]),
+                                    startPoint: .leading, endPoint: .trailing))
+                           
+                
+                .frame(width: 100,height: 100)
+                .shadow(color: .purple, radius: 10,x:0,y:10)
+                .overlay(
+                    
+                    Circle()
+                        .fill(Color.orange)
+                        .frame(width: 35,height: 35)
+                        .overlay(
+                            Text("5").font(.headline)
+                        ),
+                    alignment: .bottomTrailing
+                ))
+                
             
             Rectangle()
                 .frame(width: 100,height: 100)
@@ -50,7 +73,7 @@ struct BackgroundsandOverlaysBootcamp: View {
                 )
                 .background(
                 Circle()
-                    .fill(Color.purple)
+                    .fill(Color.green)
                     .frame(width: 120,height: 120,alignment: .center)
                 )
         }
